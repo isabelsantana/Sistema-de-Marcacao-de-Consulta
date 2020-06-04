@@ -5,8 +5,7 @@ class MainClass {
    
     Sintomas s = new Sintomas();
 
-    s.sintomasDoPaciente();  
-
+    
 
   }
 }
