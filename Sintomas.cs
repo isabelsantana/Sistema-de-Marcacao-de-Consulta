@@ -29,13 +29,8 @@ class Sintomas{
   
   Console.WriteLine("Informe seus sintomas: ");
   Descricao = Console.ReadLine();
-  
-
 
   }  
-
-
-
 
 }
 
