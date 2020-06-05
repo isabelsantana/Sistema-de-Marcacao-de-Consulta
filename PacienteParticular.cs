@@ -7,7 +7,7 @@ class PacienteParticular : Paciente{
   
   public PacienteParticular()
   {
-    plano = "Unimed";
+    plano = "Unimed Vitoria";
     numeroCad = 1234567891;
   }
   

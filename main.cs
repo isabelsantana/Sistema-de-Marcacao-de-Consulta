@@ -7,5 +7,6 @@ class MainClass {
     Console.WriteLine ("Funcionando");
     UnidadePublica p = new UnidadePublica();
     UnidadeParticular b = new UnidadeParticular();
+    ;
   }
 }
