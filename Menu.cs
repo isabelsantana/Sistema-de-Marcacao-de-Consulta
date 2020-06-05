@@ -4,6 +4,7 @@ using System.IO;
 class Menu{
 
   public void Menu(){
+    Console.WriteLine();
     
   }
 }
