@@ -26,5 +26,31 @@ class PacienteParticular : Paciente{
     get {return numeroCad;}
     set {numeroCad = value;}
   }
+
+  public void CadPacienteParticular(){ // metodo para cadastrar ficha paciente particular
+
+    Console.WriteLine("\n  ===== Paciente Particular ===== \n ");
+  
+    Console.Write("Nome: ");
+    n = Console.ReadLine(); 
+
+    Console.Write("Idade: ");
+    id = int.Parse(Console.ReadLine());
+    
+    Console.Write("Sexo: ");
+    s = char.Parse(Console.ReadLine());
+
+    Console.Write("Cidade: ");
+    cid = Console.ReadLine();
+
+    Console.Write("Plano de Saúde: ");
+    plan = Console.ReadLine();
+
+    Console.Write("Numero Inscrição do Plano de Saúde: ");
+    cad = int.Parse(Console.ReadLine());
+        
+    File.WriteAllText("PacienteParticular.txt", "===== Pacientes Particulares ===== \nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCidade do paciente: " +cidade+ "\nPlano de saúde: "+ plano+ "\nNumero inscrição do PS: "+cad);
+
+  }
 }
   
