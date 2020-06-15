@@ -2,7 +2,6 @@ using System;
 
 class MainClass {
   public static void Main (string[] args) {
-    Console.WriteLine ("Funcionando");
     Menu.Intro();
     Escolha();
   }
@@ -36,13 +35,6 @@ class MainClass {
     }
     catch(FormatException e){
       Console.WriteLine("Não deixe em Branco, digite números e não letras!");
-    }
-    finally{
-      Console.WriteLine("Deseja cadastrar outro paciente s ou n?");
-      string escolha = Console.ReadLine();
-      if(escolha == "s"){
-        Escolha();
-      }
     }
   } 
 }

@@ -1,8 +1,11 @@
 using System;
 using System.IO;
+using System.Text;
 
 class PacientePublico : Paciente{
   protected int CartaoSus;
+
+  StreamWriter pacpublic = new StreamWriter("PacientePublico.txt");
   
   public PacientePublico()
   {
@@ -16,15 +19,22 @@ class PacientePublico : Paciente{
   
   public int cs{
     get {return CartaoSus;}
-    set {CartaoSus = value;}
+    set {
+      if(value != null && value <= 10){
+        CartaoSus = value;
+      }
+      else{
+        Console.WriteLine("Número incorreto");
+        CadPacientePublico();
+      }
+    }
   }
 
  
   public void CadPacientePublico(){ // metodo para cadastrar ficha paciente publico
 
-    
     Console.WriteLine("\n  ===== Paciente Publico ===== \n ");
-  
+    
     Console.Write("Nome: ");
     nome = Console.ReadLine();
 
@@ -36,9 +46,13 @@ class PacientePublico : Paciente{
 
     Console.Write("Cartão SUS: ");
     cs = int.Parse(Console.ReadLine());
-        
-    File.WriteAllText("PacientePublico.txt", "===== Pacientes Publicos ===== **\nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCartão sus: " +CartaoSus);
 
+    Console.WriteLine("Iremos marcar sua consulta: ");
+    
+          
+    pacpublic.WriteLine("===== Pacientes Publicos ===== **\nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCartão sus: " +CartaoSus);
+      
+    pacpublic.Close();
   }
 }
   

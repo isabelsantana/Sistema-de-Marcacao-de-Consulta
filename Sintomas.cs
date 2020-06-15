@@ -6,6 +6,8 @@ class Sintomas{
   private string descricao;
   private string triagem;
 
+  StreamWriter sin = new Sintomas("Sintomas.txt");
+
   public string Descricao{
     get{ 
       return descricao;
@@ -28,6 +30,15 @@ class Sintomas{
   
   Console.WriteLine("Informe seus sintomas: ");
   Descricao = Console.ReadLine();
+  if(Descricao == "febre"){
+    triagem = "Amarela";
+  }
+
+  sr.WriteLine("===== Sintomas ===== \nNome unidade: "+nomeuni);
+
+  sr.Close();
+
+
 
   }  
 

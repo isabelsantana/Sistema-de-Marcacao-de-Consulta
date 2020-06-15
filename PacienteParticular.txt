@@ -1,5 +1,0 @@
-===== Pacientes Particulares ===== **
-Nome: Branches
-Idade: 55
-Sexo: M
-Cidade do paciente: Serra

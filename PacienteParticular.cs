@@ -1,9 +1,12 @@
 using System;
 using System.IO;
+using System.Text;
 
 class PacienteParticular : Paciente{
   protected string plano; //Nome da empresa do plano de saude
   protected int numeroCad; //Numero de cadastro do plano
+
+  StreamWriter pacpart = new StreamWriter("PacienteParticular.txt");
   
   public PacienteParticular()
   {
@@ -24,7 +27,15 @@ class PacienteParticular : Paciente{
 
   public int cad{
     get {return numeroCad;}
-    set {numeroCad = value;}
+    set {
+      if(value != null && value == 10){
+        numeroCad = value;
+      }
+      else{
+        Console.WriteLine("Número incorreto");
+        CadPacienteParticular();
+      }
+    }
   }
 
   public void CadPacienteParticular(){ // metodo para cadastrar ficha paciente particular
@@ -45,8 +56,10 @@ class PacienteParticular : Paciente{
 
     Console.Write("Numero Inscrição do Plano de Saúde: ");
     cad = int.Parse(Console.ReadLine());
-        
-    File.WriteAllText("PacienteParticular.txt", "===== Pacientes Particulares ===== \nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo + "\nPlano de saúde: "+ plano+ "\nNumero inscrição do PS: "+cad);
+
+    pacpart.WriteLine("===== Pacientes Particulares ===== \nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo + "\nPlano de saúde: "+ plano+ "\nNumero inscrição do PS: "+cad);
+    
+    pacpart.Close();
 
   }
 }

@@ -4,6 +4,7 @@ using System.IO;
 class Unidade{
   protected string bairrouni; // Bairro onde a unidade se encontra
   protected string cidadeuni; // Cidade onde a unidade se encontra
+
   
   public Unidade()
   {

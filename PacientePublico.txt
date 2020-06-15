@@ -1,5 +1,0 @@
-===== Pacientes Publicos ===== **
-Nome: 1
-Idade: 1
-Sexo: 1
-Cidade do paciente: 1

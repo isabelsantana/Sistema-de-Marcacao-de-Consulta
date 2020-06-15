@@ -1,8 +1,11 @@
- using System;
+using System;
 using System.IO;
+using System.Text;
 
 class UnidadePublica : Unidade{
-  protected string nomeuni; 
+  protected string nomeuni;
+
+  StreamWriter sr = new StreamWriter("UnidadePublica.txt");
   
   public UnidadePublica()
   {
@@ -35,9 +38,10 @@ class UnidadePublica : Unidade{
     else if(ciduni == "serra"){
       nouni = "Jayme Santos Neves";
     }
+    
+    sr.WriteLine("===== Unidade Publica da Consulta ===== \nNome unidade: "+nomeuni);
 
-    File.WriteAllText("UniPublic.txt", "===== Unidade Publica da Consulta =====\nBairro do paciente: " +bairrouni + "\nCidade do paciente: " +cidadeuni + "\nNome unidade: "+nomeuni);
-
+    sr.Close();
   }
 }
   
