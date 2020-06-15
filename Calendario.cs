@@ -3,8 +3,8 @@ using System.IO;
 
 class Calendario{
 
-  private int dia; //atributos
-  private int mes;
+  protected int dia; //atributos
+  protected int mes;
 
 
   public int Dia{ //encapsulamento

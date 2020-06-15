@@ -3,8 +3,8 @@ using System.IO;
 
 class Sintomas{
 
-  private string descricao;
-  private string triagem;
+  protected string descricao;
+  protected string triagem;
 
   public string Descricao{
     get{ 
