@@ -6,4 +6,9 @@ class Menu{
     string[] lines = File.ReadAllLines("Intro.txt");
       foreach(var line in lines) Console.WriteLine(line);
   }
+
+  public static void pacientepart(){ // Método para exibir menu inicial
+    string[] lines = File.ReadAllLines("PacienteParticular.txt");
+      foreach(var line in lines) Console.WriteLine(line);
+  }
 }

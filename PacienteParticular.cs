@@ -40,16 +40,13 @@ class PacienteParticular : Paciente{
     Console.Write("Sexo: ");
     s = char.Parse(Console.ReadLine());
 
-    Console.Write("Cidade: ");
-    cid = Console.ReadLine();
-
     Console.Write("Plano de Saúde: ");
     plan = Console.ReadLine();
 
     Console.Write("Numero Inscrição do Plano de Saúde: ");
     cad = int.Parse(Console.ReadLine());
         
-    File.WriteAllText("PacienteParticular.txt", "===== Pacientes Particulares ===== \nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCidade do paciente: " +cidade+ "\nPlano de saúde: "+ plano+ "\nNumero inscrição do PS: "+cad);
+    File.WriteAllText("PacienteParticular.txt", "===== Pacientes Particulares ===== \nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo + "\nPlano de saúde: "+ plano+ "\nNumero inscrição do PS: "+cad);
 
   }
 }

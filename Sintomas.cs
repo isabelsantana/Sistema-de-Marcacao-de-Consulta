@@ -26,7 +26,6 @@ class Sintomas{
 
   public void ColetarSintomas(){ // método para coletar os sintomas do usuário 
   
-  
   Console.WriteLine("Informe seus sintomas: ");
   Descricao = Console.ReadLine();
 

@@ -5,22 +5,19 @@ class Paciente{
   protected string nome;
   protected int idade;
   protected char sexo;
-  protected string cidade;
   
   public Paciente()
   {
     nome = "Daniel";
     idade = 20;
     sexo = 'M';
-    cidade = "Serra";
   }
   
-  public Paciente(string n, int id, char s, string cid)
+  public Paciente(string n, int id, char s)
   {
     nome = n;
     idade = id;
     sexo = s;
-    cidade = cid;
   }
   
   public string n{
@@ -36,11 +33,6 @@ class Paciente{
   public char s{
     get {return sexo;}
     set {sexo = value;}
-  }
-
-  public string cid{
-    get {return cidade;}
-    set {cidade = value;}
   }
 }
   

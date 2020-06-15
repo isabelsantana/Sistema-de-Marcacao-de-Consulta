@@ -19,12 +19,14 @@ class PacientePublico : Paciente{
     set {CartaoSus = value;}
   }
 
+ 
   public void CadPacientePublico(){ // metodo para cadastrar ficha paciente publico
 
+    
     Console.WriteLine("\n  ===== Paciente Publico ===== \n ");
   
     Console.Write("Nome: ");
-    nome = Console.ReadLine(); 
+    nome = Console.ReadLine();
 
     Console.Write("Idade: ");
     idade = int.Parse(Console.ReadLine());
@@ -32,13 +34,10 @@ class PacientePublico : Paciente{
     Console.Write("Sexo: ");
     sexo = char.Parse(Console.ReadLine());
 
-    Console.Write("Cidade: ");
-    cidade = Console.ReadLine();
-
     Console.Write("Cartão SUS: ");
     cs = int.Parse(Console.ReadLine());
         
-    File.WriteAllText("PacientePublico.txt", "===== Pacientes Publicos ===== **\nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCidade do paciente: " +cidade);
+    File.WriteAllText("PacientePublico.txt", "===== Pacientes Publicos ===== **\nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCartão sus: " +CartaoSus);
 
   }
 }
