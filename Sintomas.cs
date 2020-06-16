@@ -1,44 +1,51 @@
 using System;
 using System.IO;
+using System.Text;
 
 class Sintomas{
 
-  private string descricao;
+  private string sintoma;
   private string triagem;
 
-  StreamWriter sin = new Sintomas("Sintomas.txt");
+  StreamWriter sin = new StreamWriter("Sintomas.txt");
 
-  public string Descricao{
-    get{ 
-      return descricao;
-    }
-    set{
-      descricao = value;
-    }
+  public Sintomas(){
+    sintoma = "febre";
+    triagem = "Laranja";
+  }
+
+  public Sintomas(string Sintoma, string Triagem){
+    sintoma = Sintoma;
+    triagem = Triagem;
+  }
+
+  public string Sintoma{
+    get {return sintoma;}
+    set {sintoma = value;}
   }
 
   public string Triagem{
-    get{
-      return triagem;      
-    }
-    set{
-      triagem = value;
-    } 
+    get{return triagem;}
+    set{triagem = value;} 
   }   
 
   public void ColetarSintomas(){ // método para coletar os sintomas do usuário 
   
   Console.WriteLine("Informe seus sintomas: ");
-  Descricao = Console.ReadLine();
-  if(Descricao == "febre"){
-    triagem = "Amarela";
+  Sintoma = Console.ReadLine();
+  if(Sintoma == "dor no peito" || Sintoma == "falta de ar" || Sintoma == "febre" || Sintoma == "vomito"){
+    Triagem = "Laranja";
+  }
+  else if(sintoma == "desmaio"){
+    Triagem = "Vermelha";
+  }
+  else{
+    Triagem = "Amarela";
   }
 
-  sr.WriteLine("===== Sintomas ===== \nNome unidade: "+nomeuni);
+  sin.WriteLine("===== Sintomas ===== \nPrincipal sintoma: "+sintoma + "\nTriagem"+ triagem);
 
-  sr.Close();
-
-
+  sin.Close();
 
   }  
 

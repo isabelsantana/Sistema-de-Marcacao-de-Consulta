@@ -8,9 +8,10 @@ class MainClass {
   public static void Escolha(){
     try{
       int n1;
-      PacientePublico eu = new PacientePublico();
-      PacienteParticular eu2 = new PacienteParticular();
-      UnidadePublica ele = new UnidadePublica();
+      PacientePublico a = new PacientePublico();
+      PacienteParticular b = new PacienteParticular();
+      UnidadePublica c = new UnidadePublica();
+      Sintomas d = new Sintomas();
 
       Console.WriteLine("Informe o código do serviço desejado: ");
       n1 = int.Parse(Console.ReadLine());
@@ -20,17 +21,18 @@ class MainClass {
         n1 = int.Parse(Console.ReadLine());
             
         if (n1 == 1){
-          eu.CadPacientePublico();
+          a.CadPacientePublico();
         }
         else if (n1 == 2){
-          eu2.CadPacienteParticular();
+          b.CadPacienteParticular();
         }
       }
       if (n1 == 2){
         Console.WriteLine("Nos informe os sintomas: ");
+        d.ColetarSintomas();
 
         Console.WriteLine("Vamos te encaminhar para uma unidade.");
-        ele.CadUnidadePublica();
+        c.CadUnidadePublica();
       }
     }
     catch(FormatException e){

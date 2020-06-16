@@ -27,15 +27,7 @@ class PacienteParticular : Paciente{
 
   public int cad{
     get {return numeroCad;}
-    set {
-      if(value != null && value == 10){
-        numeroCad = value;
-      }
-      else{
-        Console.WriteLine("Número incorreto");
-        CadPacienteParticular();
-      }
-    }
+    set {numeroCad = value;}
   }
 
   public void CadPacienteParticular(){ // metodo para cadastrar ficha paciente particular

@@ -19,17 +19,8 @@ class PacientePublico : Paciente{
   
   public int cs{
     get {return CartaoSus;}
-    set {
-      if(value != null && value <= 10){
-        CartaoSus = value;
-      }
-      else{
-        Console.WriteLine("Número incorreto");
-        CadPacientePublico();
-      }
-    }
-  }
-
+    set {CartaoSus = value;}
+  } 
  
   public void CadPacientePublico(){ // metodo para cadastrar ficha paciente publico
 
