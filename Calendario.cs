@@ -23,4 +23,11 @@ class Calendario{
       mes = value;
     }
   }
+
+  public static void Vagas(){
+
+    
+
+  } 
+
 }

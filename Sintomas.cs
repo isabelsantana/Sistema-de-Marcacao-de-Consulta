@@ -25,12 +25,27 @@ class Sintomas{
   }   
 
   public void ColetarSintomas(){ // método para coletar os sintomas do usuário 
-  
-  
-  Console.WriteLine("Informe seus sintomas: ");
-  Descricao = Console.ReadLine();
 
+    int[] sint = new int [5];
+    
+
+    string[] lines = File.ReadAllLines("sintomas.txt");
+      foreach(var line in lines) Console.WriteLine(line);
+
+    Console.WriteLine("Informe os sintomas: ");
+
+    for (int i = 0; i < 5 ; i++){
+      sint[i] = int.Parse(Console.ReadLine());
+    }
+
+    Console.WriteLine("Os sintomas apresentados:{0} ",sint[5]);
+      
+    
+
+ 
   }  
+
+
 
 }
 
