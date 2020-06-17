@@ -27,9 +27,7 @@ class Sintomas{
 
   public void ColetarSintomas(){ // método para coletar os sintomas do usuário 
 
-    string[] lines = File.ReadAllLines("sintomas.txt");
-      foreach(var line in lines) Console.WriteLine(line);
-
+    
     Console.WriteLine("\nInforme o código dos sintomas: ");
 
     Dictionary <int, string> sintoma = new Dictionary <int,string>();  
