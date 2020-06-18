@@ -1,12 +1,12 @@
 using System;
+using System.IO;
 
-class MainClass {
-  public static void Main (string[] args) {
-    Menu.Intro();
-    Escolha();
-  }
-  public static void Escolha(){
-    try{
+class Menu{
+    //Escolha();
+  
+    public static void Escolha(){
+      try{
+      
       int n1;
       PacientePublico a = new PacientePublico();
       PacienteParticular b = new PacienteParticular();
