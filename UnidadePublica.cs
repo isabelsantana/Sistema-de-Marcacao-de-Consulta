@@ -1,30 +1,47 @@
 using System;
 using System.IO;
+using System.Text;
 
 class UnidadePublica : Unidade{
-  protected string nomeuni; //Nome da empresa do plano de saude
-  protected string bairrouni; //Numero de cadastro do plano
+  protected string nomeuni;
+
+  StreamWriter sr = new StreamWriter("UnidadePublica.txt");
   
   public UnidadePublica()
   {
     nomeuni = "UPA";
-    bairrouni = "NC";
   }
   
-  public UnidadePublica(string nouni, string baiuni)
+  public UnidadePublica(string nouni)
   {
     nomeuni = nouni;
-    bairrouni = baiuni;
   }
   
   public string nouni{
     get {return nomeuni;}
     set {nomeuni = value;}
   }
+  
+  public void CadUnidadePublica(){ // metodo para escolher unidade publica para consulta
+    
+    Console.WriteLine("Digite o nome do bairro e cidade onde deseja marcar a consulta\n");
+    Console.Write("Bairro: ");
+    baiuni = Console.ReadLine();
+    Console.Write("Cidade: ");
+    ciduni = Console.ReadLine();
+    if(baiuni == "NC" && ciduni == "serra"){
+      nouni = "Upa Serra";
+    }
+    else if(baiuni == "Laranjeiras" && ciduni == "serra"){
+      nouni = "Upa Carapina";
+    }
+    else if(ciduni == "serra"){
+      nouni = "Jayme Santos Neves";
+    }
+    
+    sr.WriteLine("===== Unidade Publica da Consulta ===== \nNome unidade: "+nomeuni);
 
-  public string baiuni{
-    get {return bairrouni;}
-    set {bairrouni = value;}
+    sr.Close();
   }
 }
   
