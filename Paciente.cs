@@ -42,5 +42,11 @@ class Paciente{
     get {return cidade;}
     set {cidade = value;}
   }
+
+
+  //METÓDO PARA PEDIR AS INFORMAÇÕES DO PACIENTE
+  
+  
+
 }
   
