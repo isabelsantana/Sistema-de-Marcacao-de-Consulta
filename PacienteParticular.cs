@@ -33,7 +33,7 @@ public class PacienteParticular : Paciente{
     set {numeroCad = value;}
   }
 
-  public void CadastroPacienteParticular(){ // metodo para cadastrar ficha paciente particular
+  public void CadPacienteParticular(){ // metodo para cadastrar ficha paciente particular
 
     Console.WriteLine("\n  ===== Paciente Particular ===== \n ");
   
@@ -65,7 +65,7 @@ public class PacienteParticular : Paciente{
     }
     else{
       Console.WriteLine("Por favor, digite um número válido.");
-      CadastroPacienteParticular();
+      CadPacienteParticular();
     }
 
     pacpart.WriteLine("===== Pacientes Particulares ===== \nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo + "\nPlano de saúde: "+ plano+ "\nNumero inscrição do PS: "+cad);

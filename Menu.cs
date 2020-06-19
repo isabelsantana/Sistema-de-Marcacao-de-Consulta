@@ -1,33 +1,31 @@
 using System;
 using System.IO;
 
-public class Menu{
+class Menu{
+    public static void Escolha(){
+    try{
+      int n1;
+      PacientePublico a = new PacientePublico();
+      PacienteParticular b = new PacienteParticular();
+      UnidadePublica c = new UnidadePublica();
+      UnidadeParticular d = new UnidadeParticular();
 
-  public void EscolhaDeServico(){
-  string opcao; 
-
-    PacientePublico pacientePublico = new PacientePublico(); //instancia das classes
-    PacienteParticular pacienteParticular = new PacienteParticular();
+      string[] lines = File.ReadAllLines("menu.txt"); //arquivo pra mostrar mensagem 
+        foreach(var line in lines) Console.WriteLine(line); 
+    
+      Console.WriteLine("\nVocê é um paciente: \n1 - Público\n2 - Particular\n");
+      n1 = int.Parse(Console.ReadLine());
             
-    string[] lines = File.ReadAllLines("menu.txt"); //arquivo pra mostrar mensagem 
-      foreach(var line in lines) Console.WriteLine(line); 
+      if (n1 == 1){
+        a.CadPacientePublico();
 
-    Console.WriteLine("\nDigite 1 para continuarmos!\n ");
-    opcao = Console.ReadLine();
-   
-      if (opcao == "1"){
-        Console.WriteLine("\nVocê é um paciente: \n1 - Público\n2 - Particular\n");
-        opcao = Console.ReadLine();
-              
-        if (opcao == "1"){
-          pacientePublico.CadastroPacientePublico();
-        }
-
-        else if (opcao == "2"){
-            pacienteParticular.CadastroPacienteParticular();
-        }
       }
-
-   
-  } 
+      else if (n1 == 2){
+        b.CadPacienteParticular();
+      }
+    }
+    catch(FormatException){
+      Console.WriteLine("Não deixe em Branco, digite números e não letras!");
+    }
+  }
 }

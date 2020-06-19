@@ -3,18 +3,17 @@ using System.IO;
 
 class UnidadeParticular : Unidade{
   protected string nomeunip; 
-  protected string bairrounip; 
   
+  StreamWriter srp = new StreamWriter("UnidadeParticular.txt");
+
   public UnidadeParticular()
   {
     nomeunip = "Metropolitano";
-    bairrounip = "laranjeiras";
   }
   
-  public UnidadeParticular(string nounip, string baiunip)
+  public UnidadeParticular(string nounip)
   {
     nomeunip = nounip;
-    bairrounip = baiunip;
   }
   
   public string nounip{
@@ -22,9 +21,32 @@ class UnidadeParticular : Unidade{
     set {nomeunip = value;}
   }
 
-  public string baiunip{
-    get {return bairrounip;}
-    set {bairrounip = value;}
+  public void CadUnidadeParticular(){ // metodo para escolher unidade publica para consulta
+    
+    int op;
+    Console.WriteLine("Insira um número, sendo 1 - Metropolitano, 2 - Apart e 3 - SAMP");
+    op = int.Parse(Console.ReadLine());
+
+    switch(op){
+      case 1:
+      nounip = "Metropolitano";
+      break;
+
+      case 2:
+      nounip = "Apart";
+      break;
+      
+      case 3:
+      nounip = "SAMP";
+      break;
+
+      default:
+      Console.WriteLine("número inválido");
+      break; 
+    }
+    
+    srp.WriteLine("===== Escolha da unidade ===== \nNome unidade: "+nomeunip);
+
+    srp.Close();
   }
 }
-  

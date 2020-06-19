@@ -24,7 +24,7 @@ public class PacientePublico : Paciente{
     set {CartaoSus = value;}
   } 
  
-  public void CadastroPacientePublico(){ // metodo para cadastrar ficha paciente publico
+  public void CadPacientePublico(){ // metodo para cadastrar ficha paciente publico
 
     Console.WriteLine("\n  ===== Paciente Publico ===== \n ");
     
@@ -53,7 +53,7 @@ public class PacientePublico : Paciente{
     }
     else{
       Console.WriteLine("Por favor, digite um número válido.");
-      CadastroPacientePublico();
+      CadPacientePublico();
     }
     
           

@@ -21,25 +21,31 @@ class UnidadePublica : Unidade{
     get {return nomeuni;}
     set {nomeuni = value;}
   }
-  
-  public void CadastroUnidadePublica(){ // metodo para escolher unidade publica para consulta
-    string baiuni;
-    Console.WriteLine("Digite o nome do bairro e cidade onde deseja marcar a consulta\n");
-    Console.Write("Bairro: ");
-    baiuni = Console.ReadLine();
-    Console.Write("Cidade: ");
-    ciduni = Console.ReadLine();
-    if(baiuni == "NC" && ciduni == "serra"){
-      nouni = "Upa Serra";
-    }
-    else if(baiuni == "Laranjeiras" && ciduni == "serra"){
-      nouni = "Upa Carapina";
-    }
-    else if(ciduni == "serra"){
-      nouni = "Jayme Santos Neves";
-    }
+
+  public void CadUnidadePublica(){ // metodo para escolher unidade publica para consulta
     
-    sr.WriteLine("===== Unidade Publica da Consulta ===== \nNome unidade: "+nomeuni);
+    int op;
+    Console.WriteLine("Insira um número, sendo 1 - Jayme, 2 - Dorio silva e 3 - UPA Serra");
+    op = int.Parse(Console.ReadLine());
+
+    switch(op){
+      case 1:
+      nouni = "Jayme";
+      break;
+
+      case 2:
+      nouni = "Dorio silva";
+      break;
+      
+      case 3:
+      nouni = "UPA Serra";
+      break;
+
+      default:
+      Console.WriteLine("número inválido");
+      break; 
+    }
+    sr.WriteLine("===== Escolha da unidade ===== \nNome unidade: "+nomeuni);
 
     sr.Close();
   }
