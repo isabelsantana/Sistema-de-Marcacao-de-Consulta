@@ -2,12 +2,12 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-class Sintomas{
+public class Sintomas{
 
   public void ColetarSintomas(){ // método para coletar os sintomas do usuário 
 
     
-    Console.WriteLine("\nInforme o código dos sintomas: ");
+    Console.WriteLine("\nInforme o código dos sintomas: \n");
 
     Dictionary <int, string> sintoma = new Dictionary <int,string>();  
 
@@ -29,9 +29,7 @@ class Sintomas{
 
     foreach (KeyValuePair <int, string> sint in sintoma){
       Console.WriteLine(sint.Key + " - " + sint.Value);
-    }
-
-    
+    }   
   }
 }  
 

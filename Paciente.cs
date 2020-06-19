@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-class Paciente{
+public class Paciente{
   protected string nome;
   protected int idade;
   protected char sexo;

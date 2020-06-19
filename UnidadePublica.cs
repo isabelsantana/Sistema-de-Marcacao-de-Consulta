@@ -22,8 +22,8 @@ class UnidadePublica : Unidade{
     set {nomeuni = value;}
   }
   
-  public void CadUnidadePublica(){ // metodo para escolher unidade publica para consulta
-    
+  public void CadastroUnidadePublica(){ // metodo para escolher unidade publica para consulta
+    string baiuni;
     Console.WriteLine("Digite o nome do bairro e cidade onde deseja marcar a consulta\n");
     Console.Write("Bairro: ");
     baiuni = Console.ReadLine();

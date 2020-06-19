@@ -2,7 +2,9 @@ using System;
 using System.IO;
 using System.Text;
 
-class PacientePublico : Paciente{
+public class PacientePublico : Paciente{
+
+  Sintomas sintoma = new Sintomas();
   protected int CartaoSus;
 
   StreamWriter pacpublic = new StreamWriter("PacientePublico.txt");
@@ -22,7 +24,7 @@ class PacientePublico : Paciente{
     set {CartaoSus = value;}
   } 
  
-  public void CadPacientePublico(){ // metodo para cadastrar ficha paciente publico
+  public void CadastroPacientePublico(){ // metodo para cadastrar ficha paciente publico
 
     Console.WriteLine("\n  ===== Paciente Publico ===== \n ");
     
@@ -32,13 +34,27 @@ class PacientePublico : Paciente{
     Console.Write("Idade: ");
     idade = int.Parse(Console.ReadLine());
 
-    Console.Write("Sexo: ");
+    Console.Write("Sexo (F/M): ");
     sexo = char.Parse(Console.ReadLine());
 
-    Console.Write("Cartão SUS: ");
+    Console.Write("Número do seu cartão SUS: ");
     cs = int.Parse(Console.ReadLine());
+    Console.WriteLine();
 
-    Console.WriteLine("Iremos marcar sua consulta: ");
+    string opcao; 
+    Console.WriteLine("Sua consulta é de rotina ou você tem apresentado sintomas? \nDigite 1 para rotina e 2 se tiver apresentando sintomas\n ");
+    opcao = Console.ReadLine();
+
+    if (opcao == "1"){
+      Console.WriteLine("Iremos marcar sua consulta!");
+    }
+    else if(opcao == "2"){
+      sintoma.ColetarSintomas();
+    }
+    else{
+      Console.WriteLine("Por favor, digite um número válido.");
+      CadastroPacientePublico();
+    }
     
           
     pacpublic.WriteLine("===== Pacientes Publicos ===== **\nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCartão sus: " +CartaoSus);
