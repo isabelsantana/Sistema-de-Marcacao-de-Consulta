@@ -29,9 +29,21 @@ public class Sintomas{
 
     foreach (KeyValuePair <int, string> sint in sintoma){
       Console.WriteLine(sint.Key + " - " + sint.Value);
-    }   
+    }
+    
+    Console.WriteLine(); //apenas pular linha
+    int[] vet = new int[3];
+
+    for (int i = 0; i < vet.Length; i++){
+      Console.WriteLine("Nos informe o código dos sintomas que tem apresentado.");
+      vet[i] = int.Parse(Console.ReadLine());
+    }
+    Console.WriteLine("Obrigada, vamos te encaminhar para uma unidade!");  
   }
-}  
+}
+
+
+
 
 
 
