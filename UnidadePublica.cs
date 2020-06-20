@@ -45,7 +45,10 @@ class UnidadePublica : Unidade{
       Console.WriteLine("número inválido");
       break; 
     }
-    sr.WriteLine("===== Escolha da unidade ===== \nNome unidade: "+nomeuni);
+
+    Console.WriteLine("Consulta marcada com sucesso !!\n");
+
+    sr.WriteLine("===== Unidade de consulta ===== \nNome unidade: "+nomeuni);
 
     sr.Close();
   }

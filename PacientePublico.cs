@@ -2,12 +2,13 @@ using System;
 using System.IO;
 using System.Text;
 
-public class PacientePublico : Paciente{
+class PacientePublico : Paciente{
 
   Sintomas sintoma = new Sintomas();
   protected int CartaoSus;
 
   StreamWriter pacpublic = new StreamWriter("PacientePublico.txt");
+  UnidadePublica unidpub = new UnidadePublica();
   
   public PacientePublico()
   {
@@ -41,15 +42,16 @@ public class PacientePublico : Paciente{
     cs = int.Parse(Console.ReadLine());
     Console.WriteLine();
 
-    string opcao; 
+    int opcao; 
     Console.WriteLine("Sua consulta é de rotina ou você tem apresentado sintomas? \nDigite 1 para rotina e 2 se tiver apresentando sintomas\n ");
-    opcao = Console.ReadLine();
+    opcao = int.Parse(Console.ReadLine());
 
-    if (opcao == "1"){
+    if (opcao == 1){
       Console.WriteLine("Iremos marcar sua consulta!");
     }
-    else if(opcao == "2"){
+    else if(opcao == 2){
       sintoma.ColetarSintomas();
+      unidpub.CadUnidadePublica();
     }
     else{
       Console.WriteLine("Por favor, digite um número válido.");
@@ -57,9 +59,15 @@ public class PacientePublico : Paciente{
     }
     
           
-    pacpublic.WriteLine("===== Pacientes Publicos ===== **\nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCartão sus: " +CartaoSus);
+    pacpublic.WriteLine("===== Consulta paciente publico ===== \nNome: " +nome + "\nIdade: " +idade + "\nSexo: "+sexo +"\nCartão sus: " +CartaoSus);
       
     pacpublic.Close();
+
+    string[] lines = File.ReadAllLines("PacientePublico.txt"); //arquivo pra mostrar mensagem 
+      foreach(var line in lines) Console.WriteLine(line);
+
+    string[] lines1 = File.ReadAllLines("UnidadePublica.txt"); //arquivo pra mostrar mensagem 
+      foreach(var line1 in lines1) Console.WriteLine(line1); 
   }
 }
   

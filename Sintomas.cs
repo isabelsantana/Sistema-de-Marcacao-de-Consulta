@@ -6,8 +6,7 @@ public class Sintomas{
 
   public void ColetarSintomas(){ // método para coletar os sintomas do usuário 
 
-    
-    Console.WriteLine("\nInforme o código dos sintomas: \n");
+    Console.WriteLine("\nInforme o código dos seus 3 principais sintomas: \n");
 
     Dictionary <int, string> sintoma = new Dictionary <int,string>();  
 

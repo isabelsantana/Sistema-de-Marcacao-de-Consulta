@@ -7,8 +7,6 @@ class Menu{
       int n1;
       PacientePublico a = new PacientePublico();
       PacienteParticular b = new PacienteParticular();
-      UnidadePublica c = new UnidadePublica();
-      UnidadeParticular d = new UnidadeParticular();
 
       string[] lines = File.ReadAllLines("menu.txt"); //arquivo pra mostrar mensagem 
         foreach(var line in lines) Console.WriteLine(line); 

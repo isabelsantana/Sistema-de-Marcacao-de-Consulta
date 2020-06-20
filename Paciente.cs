@@ -1,12 +1,12 @@
 using System;
 using System.IO;
 
-public class Paciente{
+class Paciente{
   protected string nome;
   protected int idade;
   protected char sexo;
-  protected string cidade;
-  
+  protected string cidade;  
+
   public Paciente()
   {
     nome = "Daniel";

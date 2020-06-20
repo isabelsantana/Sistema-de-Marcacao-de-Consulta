@@ -44,6 +44,8 @@ class UnidadeParticular : Unidade{
       Console.WriteLine("número inválido");
       break; 
     }
+
+    Console.WriteLine("Consulta marcada com sucesso !!");
     
     srp.WriteLine("===== Escolha da unidade ===== \nNome unidade: "+nomeunip);
 
